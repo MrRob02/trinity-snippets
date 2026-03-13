@@ -4,6 +4,10 @@
   "description": "Snippets and code actions for Trinity state management",
   "version": "0.0.1",
   "publisher": "MrRob02",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrRob02/trinity-snippets"
+  },
   "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.80.0"
