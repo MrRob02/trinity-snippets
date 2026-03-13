@@ -1,0 +1,24 @@
+{
+  "name": "trinity-snippets",
+  "displayName": "Trinity Snippets",
+  "description": "Snippets and code actions for Trinity state management",
+  "version": "0.0.1",
+  "publisher": "MrRob02",
+  "main": "./out/extension.js",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onLanguage:dart"
+  ],
+  "scripts": {
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/vscode": "1.80.0"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "Signal Builder": {
+    "prefix": "signalBuilder",
+    "body": [
+      "SignalBuilder<${1:StateType}>(",
+      "  signal: node.${2:mySignal},",
+      "  builder: (context, ${2:state}) {",
+      "    return ${3:myChildWidget};",
+      "  },",
+      ")"
+    ],
+    "description": "Creates a SignalBuilder widget for Trinity state management"
+  },
+  "Signal Builder Listener":{
+    "prefix": "signalBuilderL",
+    "body": [
+      "SignalBuilder.listener<${1:StateType}>(",
+      "  signal: node.${2:mySignal},",
+      "  listener: (context, ${2:state}) {",
+      "    // Handle state changes here",
+      "  },",
+      "  builder: (context, ${2:state}) {",
+      "    return ${3:myChildWidget};",
+      "  },",
+      ")"
+    ],
+    "description": "Creates a SignalBuilderListener widget for Trinity state management"
+  },
+  "Signal Builder Many": {
+    "prefix": "signalBuilderMany",
+    "body": [
+      "SignalBuilderMany<Readable${1:MyNode}>(",
+      "  signals: {${2:mySignals}},",
+      "  builder: (context, readable) {",
+      "    return ${3:myChildWidget};",
+      "  },",
+      ")"
+    ],
+    "description": "Creates a SignalBuilder widget for Trinity state management"
+  },
+  "Signal Listener": {
+    "prefix": "signalListener",
+    "body": [
+      "SignalListener<${1:StateType}>(",
+      "  signal: node.${2:mySignal},",
+      "  listener: (context, ${2:state}) {",
+      "    // Handle state changes here",
+      "  },",
+      ")"
+    ],
+    "description": "Creates a SignalListener widget for Trinity state management"
+  },
+  "Create Signal": {
+    "prefix": "signal",
+    "body": [
+      "late final ${1:name} = registerSignal(Signal<${2:Type}>(${3:initialValue}));"
+    ],
+    "description": "Creates a new Signal instance"
+  },
+  "Create FutureSignal": {
+    "prefix": "futureSignal",
+    "body": [
+      "late final ${1:name} = registerSignal(FutureSignal<${2:Type}>(${3:initialValue}));"
+    ],
+    "description": "Creates a new FutureSignal instance"
+  },
+  "Create Stream Signal": {
+    "prefix": "streamSignal",
+    "body": [
+      "late final ${1:name} = registerSignal(StreamSignal<${2:Type}>(${3:initialValue}));"
+    ],
+    "description": "Creates a new StreamSignal instance"
+  },
+    "Create Computed Signal": {
+        "prefix": "computedSignal",
+        "body": [
+        "late final ${1:name} = registerSignal(ComputedSignal<${2:SignalType}, ${3:ResultType}>(",
+        "  signal: ${4:mySignal},",
+        "  () {",
+        "    return ${5:computeValue};",
+        "  }",
+        "));"
+        ],
+        "description": "Creates a new ComputedSignal instance"
+    },
+    "Create Computed Signal Many": {
+        "prefix": "computedSignalMany",
+        "body": [
+        "late final ${1:name} = registerSignal(ComputedSignalMany<${2:ResultType}>(",
+        "  signals: {${3:yourSignals}},",
+        "  () {",
+        "    return ${4:computeValue};",
+        "  }",
+        "));"
+        ],
+        "description": "Creates a new ComputedSignal instance"
+    },
+    "Create Node Provider": {
+        "prefix": "nodeProvider",
+        "body": [
+        "NodeProvider(",
+        "  create: () => ${1:MyNode}(),",
+        "  child: ${2:childWidget},",
+        ");"
+        ],
+        "description": "Creates a new NodeProvider"
+    },
+    "Create Node Provider Builder":{
+        "prefix": "nodeProviderB",
+        "body": [
+        "NodeProvider(",
+        "  create: () => ${1:MyNode}(),",
+        "  builder: (context, node) {",
+        "    return ${2:childWidget};",
+        "  }",
+        ");"
+        ],
+        "description": "Creates a new NodeProvider"
+    },
+    "Create Node Interface":{
+        "prefix": "nodeInterface",
+        "body": [
+            "class ${1:MyNode} extends NodeInterface<Readable${1:MyNode}> {",
+            "",
+            "  ${1:MyNode}() {",
+            "    // Initialize your node here",
+            "  }",
+            "}"
+        ],
+        "description": "Creates a new NodeInterface class"
+    },
+    "Import Trinity": {
+        "prefix": "imtrinity",
+        "body": [
+            "import 'package:trinity/trinity.dart';"
+        ],
+        "description": "Imports the Trinity package"
+    },
+    "Find Node": {
+        "prefix": "findNode",
+        "body": [
+            "context.findNode<${1:MyNode}>()${2:;}"
+        ],
+        "description": "Finds a node in the current context"
+    },
+    "Instance Find Node": {
+        "prefix": "finalNode",
+        "body": [
+            "final node = context.findNode<${1:MyNode}>()${2:;}"
+        ],
+        "description": "Finds a node in the current context"
+    }
+}
