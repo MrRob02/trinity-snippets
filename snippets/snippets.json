@@ -43,7 +43,7 @@
     "body": [
       "SignalListener<${1:StateType}>(",
       "  signal: node.${2:mySignal},",
-      "  listener: (context, ${2:state}) {",
+      "  listener: (previous, current) {",
       "    // Handle state changes here",
       "  },",
       "  child: ${3:myChildWidget},",
@@ -69,6 +69,17 @@
     "prefix": "streamSignal",
     "body": [
       "late final ${1:name} = registerSignal(StreamSignal<${2:Type}>(${3:initialValue}));"
+    ],
+    "description": "Creates a new StreamSignal instance"
+  },
+  "Create Stream Signal With Initial Value": {
+    "prefix": "streamValueSignal",
+    "body": [
+      "late final ${1:name} = registerSignal(StreamSignalWithInitialValue(",
+      "  ${2:stream},",
+      "  initialValue: ${3:initialValue},",
+      " )",
+      ");"
     ],
     "description": "Creates a new StreamSignal instance"
   },
@@ -121,6 +132,8 @@
   "Create Node Interface": {
     "prefix": "nodeInterface",
     "body": [
+      "import 'package:trinity/trinity.dart';",
+      "",
       "class ${1:MyNode} extends NodeInterface<Readable${1:MyNode}> {",
       "",
       "  ${1:MyNode}() {",

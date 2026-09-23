@@ -2,7 +2,7 @@
   "name": "trinity-snippets",
   "displayName": "Trinity Snippets",
   "description": "Snippets and code actions for Trinity state management",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "MrRob02",
   "repository": {
     "type": "git",
@@ -15,6 +15,14 @@
   "activationEvents": [
     "onLanguage:dart"
   ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "dart",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
   "scripts": {
     "compile": "npx tsc -p ./",
     "watch": "npx tsc -watch -p ./"
